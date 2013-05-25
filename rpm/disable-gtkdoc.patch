@@ -1,0 +1,30 @@
+diff --git a/configure.ac b/configure.ac
+index fda67df..bad6333 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -352,10 +352,10 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
+ # Checks for gtk-doc and docbook-tools
+ ##################################################
+ gtk_doc_installed=true
+-#ifdef([GTK_DOC_CHECK],[GTK_DOC_CHECK([1.12])],[gtk_doc_installed=false])
++ifdef([GTK_DOC_CHECK],[GTK_DOC_CHECK([1.12])],[gtk_doc_installed=false])
+ # I would have liked to conditionalize this, but 
+ # that appears to break other things http://bugzilla.gnome.org/show_bug.cgi?id=156399
+-GTK_DOC_CHECK([1.12])
++#GTK_DOC_CHECK([1.12])
+ AM_CONDITIONAL(GTK_DOC_INSTALLED, $gtk_doc_installed)
+ 
+ dnl ***********************************************************************************
+diff --git a/doc/Makefile.am b/doc/Makefile.am
+index 292ac68..e5e8a19 100644
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
+@@ -53,7 +53,7 @@ manpage_DATA = gsf-vba-dump.1 gsf.1 gsf-office-thumbnailer.1
+ 
+ if GTK_DOC_INSTALLED
+ include $(top_srcdir)/gtk-doc.make
+-CLEANFILES += gsf-scan.*
++CLEANFILES = gsf-scan.*
+ .PHONY : dist-hook-local
+ EXTRA_DIST += $(manpage_DATA)
+ else

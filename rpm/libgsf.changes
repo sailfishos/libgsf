@@ -1,0 +1,23 @@
+* Mon Dec 10 2012 Marko Saukko <marko.saukko@jollamobile.com> - 1.14.23
+- Updated packaging.
+
+* Tue Jun 26 2012 Marko Saukko <sage@merproject.org> - 1.14.23
+- Update to version 1.14.23
+
+* Fri Jun 10 2011 Damien Lespiau <damien.lespiau@intel.com> - 1.14.21
+- Update to 1.14.21
+- Remove gsf-office-thumbnails and thus gconf dependency
+- Update the Source url to use http, not ftp
+- Port to yaml
+
+* Wed Mar 17 2010 Anas Nashif <anas.nashif@intel.com> - 1.14.16
+- Disable support for libbonobo and gnome-vfs
+
+* Mon Mar 01 2010 Anas Nashif <anas.nashif@intel.com> - 1.14.16
+- Add python-devel to BuildRequires
+
+* Tue Nov 24 2009 Anas Nashif <anas.nashif@intel.com> - 1.14.16
+- Update to 1.14.16
+
+* Thu Feb 19 2009 Anas Nashif <anas.nashif@intel.com> 1.14.11
+- Initial import into Moblin
