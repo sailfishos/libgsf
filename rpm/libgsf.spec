@@ -15,7 +15,6 @@ Group:      System/Libraries
 License:    LGPLv2
 URL:        http://www.gnome.org/projects/libgsf/
 Source0:    http://download.gnome.org/sources/%{name}/1.14/%{name}-%{version}.tar.xz
-Source1:    gnome-autogen.sh
 Source100:  libgsf.yaml
 Patch0:     disable-gtkdoc.patch
 Requires(post): /sbin/ldconfig
@@ -27,6 +26,7 @@ BuildRequires:  perl-XML-Parser
 BuildRequires:  bzip2-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
+BuildRequires:  gnome-common
 
 %description
 A library for reading and writing structured files (eg MS OLE and Zip)
@@ -47,14 +47,12 @@ using libgsf.
 # disable-gtkdoc.patch
 %patch0 -p1
 # >> setup
-%__cp $RPM_SOURCE_DIR/gnome-autogen.sh .
-%__chmod 0755 gnome-autogen.sh
 # << setup
 
 %build
 # >> build pre
 echo "EXTRA_DIST = missing-gtk-doc" > gtk-doc.make
-USE_GNOME2_MACROS=1 NOCONFIGURE=1 ./gnome-autogen.sh
+USE_GNOME2_MACROS=1 NOCONFIGURE=1 gnome-autogen.sh
 # << build pre
 
 %configure --disable-static \

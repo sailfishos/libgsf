@@ -7,7 +7,6 @@ License: LGPLv2
 URL: http://www.gnome.org/projects/libgsf/
 Sources:
     - http://download.gnome.org/sources/%{name}/1.14/%{name}-%{version}.tar.xz
-    - gnome-autogen.sh
 Patches:
     - disable-gtkdoc.patch
 Description: A library for reading and writing structured files (eg MS OLE and Zip)
@@ -21,6 +20,7 @@ PkgBR:
   - bzip2-devel
   - gettext
   - intltool
+  - gnome-common
 SetupOptions: -q -n %{name}-%{version}/%{name}
 ConfigOptions:
   - --disable-gtk-doc
