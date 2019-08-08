@@ -3,8 +3,8 @@ Summary:    GNOME Structured File library
 Version:    1.14.26
 Release:    1
 Group:      System/Libraries
-License:    LGPLv2.1
-URL:        https://git.merproject.org/mer-core/libgsf
+License:    LGPLv2
+URL:        https://git.sailfishos.org/mer-core/libgsf
 Source0:    %{name}-%{version}.tar.xz
 Patch0:     disable-gtkdoc.patch
 Requires(post): /sbin/ldconfig
