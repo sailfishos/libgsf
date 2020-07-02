@@ -1,8 +1,7 @@
 Name:       libgsf
 Summary:    GNOME Structured File library
-Version:    1.14.26
+Version:    1.14.47
 Release:    1
-Group:      System/Libraries
 License:    LGPLv2
 URL:        https://git.sailfishos.org/mer-core/libgsf
 Source0:    %{name}-%{version}.tar.xz
@@ -16,14 +15,12 @@ BuildRequires:  perl-XML-Parser
 BuildRequires:  bzip2-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
-BuildRequires:  gnome-common
 
 %description
 A library for reading and writing structured files (eg MS OLE and Zip)
 
 %package devel
 Summary:    Support files necessary to compile applications with libgsf
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -32,20 +29,17 @@ using libgsf.
 
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
-
-# disable-gtkdoc.patch
-%patch0 -p1
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
 echo "EXTRA_DIST = missing-gtk-doc" > gtk-doc.make
-USE_GNOME2_MACROS=1 NOCONFIGURE=1 gnome-autogen.sh
+sh autogen.sh
 
 %configure --disable-static \
     --disable-gtk-doc \
     --without-python
 
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
