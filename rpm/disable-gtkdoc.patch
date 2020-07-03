@@ -1,8 +1,21 @@
+diff --git a/autogen.sh b/autogen.sh
+index c56ff4b..a243a53 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -18,7 +18,7 @@ olddir=$(pwd)
+ 
+ cd $srcdir
+ aclocal --install || exit 1
+-gtkdocize --copy || exit 1
++#gtkdocize --copy || exit 1
+ autoreconf --verbose --force --install || exit 1
+ cd $olddir
+ 
 diff --git a/configure.ac b/configure.ac
-index 1f8e5cb..4364383 100644
+index 3a1faf9..11df926 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -356,10 +356,10 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
+@@ -354,11 +354,11 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
  # Checks for gtk-doc and docbook-tools
  ##################################################
  gtk_doc_installed=true
@@ -10,13 +23,14 @@ index 1f8e5cb..4364383 100644
 +ifdef([GTK_DOC_CHECK],[GTK_DOC_CHECK([1.12])],[gtk_doc_installed=false])
  # I would have liked to conditionalize this, but 
  # that appears to break other things http://bugzilla.gnome.org/show_bug.cgi?id=156399
+ dnl AX_REQUIRE_DEFINED([GTK_DOC_CHECK])
 -GTK_DOC_CHECK([1.12])
 +#GTK_DOC_CHECK([1.12])
  AM_CONDITIONAL(GTK_DOC_INSTALLED, $gtk_doc_installed)
  
  dnl ***********************************************************************************
 diff --git a/doc/Makefile.am b/doc/Makefile.am
-index 16d795e..c76c068 100644
+index 7136102..663fc97 100644
 --- a/doc/Makefile.am
 +++ b/doc/Makefile.am
 @@ -49,7 +49,7 @@ manpage_DATA = gsf-vba-dump.1 gsf.1 gsf-office-thumbnailer.1
