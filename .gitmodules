@@ -1,3 +1,3 @@
 [submodule "libgsf"]
 	path = libgsf
-	url = https://git.merproject.org/mirror/libgsf.git
+	url = https://github.com/sailfishos-mirror/libgsf.git
