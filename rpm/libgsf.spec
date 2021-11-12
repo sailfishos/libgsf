@@ -53,7 +53,7 @@ rm -rf %{buildroot}
 
 %files -f libgsf.lang
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libgsf-1.so.*
 %{_bindir}/gsf-office-thumbnailer
 %{_datadir}/thumbnailers/gsf-office.thumbnailer
