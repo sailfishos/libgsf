@@ -3,7 +3,7 @@ Summary:    GNOME Structured File library
 Version:    1.14.47
 Release:    1
 License:    LGPLv2
-URL:        https://git.sailfishos.org/mer-core/libgsf
+URL:        https://github.com/sailfishos/libgsf
 Source0:    %{name}-%{version}.tar.xz
 Patch0:     disable-gtkdoc.patch
 Requires(post): /sbin/ldconfig
@@ -11,10 +11,8 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(gobject-2.0) >= 2.16.0
 BuildRequires:  pkgconfig(glib-2.0) >= 2.26.0
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.4.16
-BuildRequires:  perl-XML-Parser
 BuildRequires:  bzip2-devel
 BuildRequires:  gettext
-BuildRequires:  intltool
 
 %description
 A library for reading and writing structured files (eg MS OLE and Zip)
