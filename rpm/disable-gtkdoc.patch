@@ -12,10 +12,10 @@ index c56ff4b..a243a53 100755
  cd $olddir
  
 diff --git a/configure.ac b/configure.ac
-index 3a1faf9..11df926 100644
+index edacc72..509da5d 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -354,11 +354,11 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
+@@ -348,11 +348,11 @@ AM_CONDITIONAL(CROSS_COMPILING, test x"$cross_compiling" != "xno")
  # Checks for gtk-doc and docbook-tools
  ##################################################
  gtk_doc_installed=true
