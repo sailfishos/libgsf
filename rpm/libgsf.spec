@@ -1,6 +1,6 @@
 Name:       libgsf
 Summary:    GNOME Structured File library
-Version:    1.14.47
+Version:    1.14.52
 Release:    1
 License:    LGPLv2
 URL:        https://github.com/sailfishos/libgsf
@@ -50,14 +50,12 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 
 %files -f libgsf.lang
-%defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libgsf-1.so.*
 %{_bindir}/gsf-office-thumbnailer
 %{_datadir}/thumbnailers/gsf-office.thumbnailer
 
 %files devel
-%defattr(-,root,root,-)
 %{_bindir}/gsf
 %{_bindir}/gsf-vba-dump
 %{_libdir}/libgsf-1.so
